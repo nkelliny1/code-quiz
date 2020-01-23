@@ -338,7 +338,7 @@
 
         document.getElementById('submitInitials').addEventListener("click", function(){
             var initials = document.getElementById('enterInitials').value;
-            if(/(.*[a-zA-Z]){3}/i.test('initials') == true){
+            if(initials.match(/[A-Z]{2,3}$/)){
                 scores.push((initials + '-' + scoreCount).toString());
                 var newArray = scores.concat(JSON.parse(localStorage.getItem('highScores')));
                 localStorage.setItem('highScores', JSON.stringify(newArray));
@@ -369,7 +369,7 @@
                 }, 1000);
             }
             else{
-                alert("Please enter two letters for your initials and try again.");
+                alert("Please enter two or three uppercase letters for your initials and try again.");
             }
         });
 
