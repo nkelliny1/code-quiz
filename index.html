@@ -16,6 +16,9 @@
         border: 0;
         margin-bottom: 20px;
     }
+    #mainNav{
+        background-color: #fff !important;
+    }
     ul{
         list-style: none;
     }
@@ -34,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#"><span>Time:&nbsp;</span><span id="timer">75</span></a>
+            <a class="nav-link" href="#" style="color: black;"><span>Time:&nbsp;</span><span id="timer">75</span></a>
           </li>
         </ul>
       </div>
@@ -46,16 +49,16 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="mt-5">Coding Quiz Challenge</h1>
-        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+        <p class="lead">Welcome to the coding quiz where you will be evaluated based on your knowledge of coding. Please be aware that this is a timed quiz and that for every wrong answer submitted, you will recieve 0 points and 5 seconds will be removed from the timer. For every correct answer you will recieve 5 points. Good Luck!</p>
         <button id='startQuizButton' class="btn btn-primary purple-button">Start Quiz</button>
       </div>
     </div>
   </div>
 
-  <div class="container" id="firstQuestion" style="display: none;">
+  <div class="container text-center" id="firstQuestion" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">Commonly used data types do not include ______________.</p>
+        <h3 class="mt-5">Commonly used data types do not include ______________.</h3>
         <ul>
             <li><button class="btn btn-primary purple-button firstAnswer">Integers</button></li>
             <li><button class="btn btn-primary purple-button firstAnswer">Strings</button></li>
@@ -66,10 +69,10 @@
     </div>
   </div>
 
-  <div class="container" id="secondQuestion" style="display: none;">
+  <div class="container text-center" id="secondQuestion" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">Arrays can contain ______________.</p>
+        <h3 class="mt-5">Arrays can contain ______________.</h3>
         <ul>
             <li><button class="btn btn-primary purple-button secondAnswer">Integers</button></li>
             <li><button class="btn btn-primary purple-button secondAnswer">Strings</button></li>
@@ -80,10 +83,10 @@
     </div>
   </div>
 
-  <div class="container" id="thirdQuestion" style="display: none;">
+  <div class="container text-center" id="thirdQuestion" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">if/else statements are enclosed in ______________.</p>
+        <h3 class="mt-5">if/else statements are enclosed in ______________.</h3>
         <ul>
             <li><button class="btn btn-primary purple-button thirdAnswer">Parantheses</button></li>
             <li><button class="btn btn-primary purple-button thirdAnswer">Right and left arrows</button></li>
@@ -94,10 +97,10 @@
     </div>
   </div>
 
-  <div class="container" id="fourthQuestion" style="display: none;">
+  <div class="container text-center" id="fourthQuestion" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">A for loop contains the expressions which are ______________.</p>
+        <h3 class="mt-5">A for loop contains the expressions which are ______________.</h3>
         <ul>
             <li><button class="btn btn-primary purple-button fourthAnswer">Initialization</button></li>
             <li><button class="btn btn-primary purple-button fourthAnswer">Condition</button></li>
@@ -108,10 +111,10 @@
     </div>
   </div>
 
-  <div class="container" id="fifthQuestion" style="display: none;">
+  <div class="container text-center" id="fifthQuestion" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">The best tool for editing code is ______________.</p>
+        <h3 class="mt-5">The best tool for editing code is ______________.</h3>
         <ul>
             <li><button class="btn btn-primary purple-button fifthAnswer">Visual studio code</button></li>
             <li><button class="btn btn-primary purple-button fifthAnswer">Microsoft Word</button></li>
@@ -122,29 +125,29 @@
     </div>
   </div>
 
-  <div class="container" id="enterHighScore" style="display: none;">
+  <div class="container text-center" id="enterHighScore" style="display: none;">
     <div class="row">
       <div class="col-lg-12">
-        <p class="lead">All Done!</p>
+        <h3 class="mt-5">All Done!</h3>
         <p class="lead">Your final score is: <span id="finalScore"></span></p>
-        <span>Enter Your Initials: </span><input type="text" id="enterInitials" pattern="[A-Za-z]{3}"/><span>&nbsp;<button id="submitInitials" class="btn btn-primary purple-button">Submit</button></span>
+        <span>Enter Your Initials: </span><input type="text" id="enterInitials"/><span>&nbsp;<button id="submitInitials" class="btn btn-primary purple-button" style="margin-top: 15px;">Submit</button></span>
       </div>
     </div>
   </div>
 
-  <div class="container" id="highScores" style="display: none;">
+  <div class="container" id="highScores" style="display: none; margin-left: 40%;">
     <div class="row">
-      <div class="col-lg-12">
-        <p class="lead">High Scores</p>
+      <div class="col-lg-3">
+        <h3 class="mt-5">High Scores</h3>
         <div id="highScoreList"></div>
         <a href=""><button class="btn btn-primary purple-button">Go Back</button></a>&nbsp;<button id="clearScores" class="btn btn-primary purple-button">Clear Scores</button></span>
       </div>
     </div>
   </div>
 
-  <hr id="answerHr" style="display: none;">
-  <h3 id="wrongText" style="display: none;">Wrong</h3>
-  <h3 id="rightText" style="display: none;">Correct</h3>
+  <hr id="answerHr" style="display: none; width: 50%;">
+  <h3 id="wrongText" style="display: none; margin-left: 30%;">Wrong</h3>
+  <h3 id="rightText" style="display: none; margin-left: 30%;">Correct</h3>
 
   <script type="text/javascript">
     var scoreCount = 0;
@@ -156,7 +159,7 @@
             var timer = setInterval(function(){
                 sec--;
                 document.getElementById('timer').innerHTML= sec;
-                if (sec < 0) {
+                if (sec < 1) {
                     clearInterval(timer);
                     console.log("Time is up!");
                     document.getElementById('firstQuestion').style.display = 'none';
@@ -165,10 +168,11 @@
                     document.getElementById('fourthQuestion').style.display = 'none';
                     document.getElementById('fifthQuestion').style.display = 'none';
                     document.getElementById('enterHighScore').style.display = 'block';
-                    document.getElementById('timerNav').style.display = "none";
+                    document.getElementById('mainNav').style.display = "none";
                     document.getElementById('answerHr').style.display = "none";
                     document.getElementById('wrongText').style.display = "none";
                     document.getElementById('highScores').style.display = "none";
+                    document.getElementById('finalScore').innerHTML = scoreCount;
                 }
                 var fifthClass = document.getElementsByClassName('fifthAnswer');
         for (var i = 0; i < fifthClass.length; i++) {
@@ -349,15 +353,16 @@
                     var items = (localStorage.getItem("highScores"));
                     var allScores = JSON.parse(items);
             
-                    //making sure it still is an array
                     console.log(allScores.length);
                     var ol = document.createElement('ol');
                     document.getElementById('highScoreList').appendChild(ol);
                     allScores.forEach(function (item, index) {
-                        let li = document.createElement('li');
-                        ol.appendChild(li);
+                        if(item != null){
+                            let li = document.createElement('li');
+                            ol.appendChild(li);
 
-                        li.innerHTML += item;
+                            li.innerHTML += item;
+                        }
                     });
                     document.getElementById('enterHighScore').style.display = "none";
                     document.getElementById('highScores').style.display = "block";
@@ -380,6 +385,20 @@
             document.getElementById('mainNav').style.display = "none";
             document.getElementById('enterHighScore').style.display = "none";
             document.getElementById('highScores').style.display = "block";
+            var items = (localStorage.getItem("highScores"));
+                    var allScores = JSON.parse(items);
+            
+                    console.log(allScores.length);
+                    var ol = document.createElement('ol');
+                    document.getElementById('highScoreList').appendChild(ol);
+                    allScores.forEach(function (item, index) {
+                        if(item != null){
+                            let li = document.createElement('li');
+                            ol.appendChild(li);
+
+                            li.innerHTML += item;
+                        }
+                    });
         });
 
         document.getElementById('clearScores').addEventListener("click", function(){
