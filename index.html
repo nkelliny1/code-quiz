@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Code Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    .purple-button{
+        background-color: purple;
+        border: 0;
+        margin-bottom: 20px;
+    }
+    ul{
+        list-style: none;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top" id="mainNav">
+    <div class="container" id="timerNav">
+      <a class="navbar-brand" href="#" id="viewScores">View Highscores</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span>Time:&nbsp;</span><span id="timer">75</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container text-center" id="homePage">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="mt-5">Coding Quiz Challenge</h1>
+        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+        <button id='startQuizButton' class="btn btn-primary purple-button">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="firstQuestion" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">Commonly used data types do not include ______________.</p>
+        <ul>
+            <li><button class="btn btn-primary purple-button firstAnswer">Integers</button></li>
+            <li><button class="btn btn-primary purple-button firstAnswer">Strings</button></li>
+            <li><button class="btn btn-primary purple-button firstAnswer">Boolean</button></li>
+            <li><button class="btn btn-primary purple-button firstAnswer">Sources</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="secondQuestion" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">Arrays can contain ______________.</p>
+        <ul>
+            <li><button class="btn btn-primary purple-button secondAnswer">Integers</button></li>
+            <li><button class="btn btn-primary purple-button secondAnswer">Strings</button></li>
+            <li><button class="btn btn-primary purple-button secondAnswer">All of the above</button></li>
+            <li><button class="btn btn-primary purple-button secondAnswer">None of the above</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="thirdQuestion" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">if/else statements are enclosed in ______________.</p>
+        <ul>
+            <li><button class="btn btn-primary purple-button thirdAnswer">Parantheses</button></li>
+            <li><button class="btn btn-primary purple-button thirdAnswer">Right and left arrows</button></li>
+            <li><button class="btn btn-primary purple-button thirdAnswer">Square brackets</button></li>
+            <li><button class="btn btn-primary purple-button thirdAnswer">Curly brackets</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="fourthQuestion" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">A for loop contains the expressions which are ______________.</p>
+        <ul>
+            <li><button class="btn btn-primary purple-button fourthAnswer">Initialization</button></li>
+            <li><button class="btn btn-primary purple-button fourthAnswer">Condition</button></li>
+            <li><button class="btn btn-primary purple-button fourthAnswer">Final Expression (often increment)</button></li>
+            <li><button class="btn btn-primary purple-button fourthAnswer">All of the above</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="fifthQuestion" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">The best tool for editing code is ______________.</p>
+        <ul>
+            <li><button class="btn btn-primary purple-button fifthAnswer">Visual studio code</button></li>
+            <li><button class="btn btn-primary purple-button fifthAnswer">Microsoft Word</button></li>
+            <li><button class="btn btn-primary purple-button fifthAnswer">Notepad</button></li>
+            <li><button class="btn btn-primary purple-button fifthAnswer">Wordpad</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="enterHighScore" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">All Done!</p>
+        <p class="lead">Your final score is: <span id="finalScore"></span></p>
+        <span>Enter Your Initials: </span><input type="text" id="enterInitials" pattern="[A-Za-z]{3}"/><span>&nbsp;<button id="submitInitials" class="btn btn-primary purple-button">Submit</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="highScores" style="display: none;">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="lead">High Scores</p>
+        <div id="highScoreList"></div>
+        <a href=""><button class="btn btn-primary purple-button">Go Back</button></a>&nbsp;<button id="clearScores" class="btn btn-primary purple-button">Clear Scores</button></span>
+      </div>
+    </div>
+  </div>
+
+  <hr id="answerHr" style="display: none;">
+  <h3 id="wrongText" style="display: none;">Wrong</h3>
+  <h3 id="rightText" style="display: none;">Correct</h3>
+
+  <script type="text/javascript">
+    var scoreCount = 0;
+    var sec = 75;
+    var scores = [];
+    document.getElementById('timer').innerHTML= sec;
+        function startTimer(){
+            console.log('The quiz has started');
+            var timer = setInterval(function(){
+                sec--;
+                document.getElementById('timer').innerHTML= sec;
+                if (sec < 0) {
+                    clearInterval(timer);
+                    console.log("Time is up!");
+                    document.getElementById('firstQuestion').style.display = 'none';
+                    document.getElementById('secondQuestion').style.display = 'none';
+                    document.getElementById('thirdQuestion').style.display = 'none';
+                    document.getElementById('fourthQuestion').style.display = 'none';
+                    document.getElementById('fifthQuestion').style.display = 'none';
+                    document.getElementById('enterHighScore').style.display = 'block';
+                    document.getElementById('timerNav').style.display = "none";
+                    document.getElementById('answerHr').style.display = "none";
+                    document.getElementById('wrongText').style.display = "none";
+                    document.getElementById('highScores').style.display = "none";
+                }
+                var fifthClass = document.getElementsByClassName('fifthAnswer');
+        for (var i = 0; i < fifthClass.length; i++) {
+            fifthClass[i].addEventListener("click", function(){
+                clearInterval(timer);
+             })
+        };
+            }, 1000);
+        }
+
+        document.getElementById('startQuizButton').onclick = function () {
+                startTimer();
+                document.getElementById('homePage').style.display  = "none";
+                document.getElementById('firstQuestion').style.display = "block";
+        };
+        var firstClass = document.getElementsByClassName('firstAnswer');
+        for (var i = 0; i < firstClass.length; i++) {
+            firstClass[i].addEventListener("click", function(){ 
+                if(this.innerHTML == "Sources"){
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('rightText').style.display = "block";
+                    scoreCount += 5;
+                    console.log(scoreCount);
+                    setTimeout(function(){ 
+                        document.getElementById('firstQuestion').style.display = 'none';
+                        document.getElementById('secondQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('rightText').style.display = "none";
+                    }, 1000);
+                }
+                else{
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('wrongText').style.display = "block";
+                    sec -= 5;
+                    document.getElementById('timer').innerHTML=sec;
+                    setTimeout(function(){ 
+                        document.getElementById('firstQuestion').style.display = 'none';
+                        document.getElementById('secondQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('wrongText').style.display = "none";
+                    }, 1000);
+                }
+            });
+        }
+        var secondClass = document.getElementsByClassName('secondAnswer');
+        for (var i = 0; i < secondClass.length; i++) {
+            secondClass[i].addEventListener("click", function(){ 
+                if(this.innerHTML == "All of the above"){
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('rightText').style.display = "block";
+                    scoreCount += 5;
+                    console.log(scoreCount);
+                    setTimeout(function(){ 
+                        document.getElementById('secondQuestion').style.display = 'none';
+                        document.getElementById('thirdQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('rightText').style.display = "none";
+                    }, 1000);
+                }
+                else{
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('wrongText').style.display = "block";
+                    sec -= 5;
+                    document.getElementById('timer').innerHTML=sec;
+                    setTimeout(function(){ 
+                        document.getElementById('secondQuestion').style.display = 'none';
+                        document.getElementById('thirdQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('wrongText').style.display = "none";
+                    }, 1000);
+                }
+            });
+        }
+        var thirdClass = document.getElementsByClassName('thirdAnswer');
+        for (var i = 0; i < thirdClass.length; i++) {
+            thirdClass[i].addEventListener("click", function(){ 
+                if(this.innerHTML == "Curly brackets"){
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('rightText').style.display = "block";
+                    scoreCount += 5;
+                    console.log(scoreCount);
+                    setTimeout(function(){ 
+                        document.getElementById('thirdQuestion').style.display = 'none';
+                        document.getElementById('fourthQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('rightText').style.display = "none";
+                    }, 1000);
+                }
+                else{
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('wrongText').style.display = "block";
+                    sec -= 5;
+                    document.getElementById('timer').innerHTML=sec;
+                    setTimeout(function(){ 
+                        document.getElementById('thirdQuestion').style.display = 'none';
+                        document.getElementById('fourthQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('wrongText').style.display = "none";
+                    }, 1000);
+                }
+            });
+        }
+        var fourthClass = document.getElementsByClassName('fourthAnswer');
+        for (var i = 0; i < fourthClass.length; i++) {
+            fourthClass[i].addEventListener("click", function(){ 
+                if(this.innerHTML == "All of the above"){
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('rightText').style.display = "block";
+                    scoreCount += 5;
+                    console.log(scoreCount);
+                    setTimeout(function(){ 
+                        document.getElementById('fourthQuestion').style.display = 'none';
+                        document.getElementById('fifthQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('rightText').style.display = "none";
+                    }, 1000);
+                }
+                else{
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('wrongText').style.display = "block";
+                    sec -= 5;
+                    document.getElementById('timer').innerHTML=sec;
+                    setTimeout(function(){ 
+                        document.getElementById('fourthQuestion').style.display = 'none';
+                        document.getElementById('fifthQuestion').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('wrongText').style.display = "none";
+                    }, 1000);
+                }
+            });
+        }
+        var fifthClass = document.getElementsByClassName('fifthAnswer');
+        for (var i = 0; i < fifthClass.length; i++) {
+            fifthClass[i].addEventListener("click", function(){ 
+                if(this.innerHTML == "Visual studio code"){
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('rightText').style.display = "block";
+                    scoreCount += 5;
+                    console.log(scoreCount);
+                    setTimeout(function(){ 
+                        document.getElementById('fifthQuestion').style.display = 'none';
+                        document.getElementById('enterHighScore').style.display = 'block';
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('rightText').style.display = "none";
+                    }, 1000);
+                }
+                else{
+                    document.getElementById('answerHr').style.display = "block";
+                    document.getElementById('wrongText').style.display = "block";
+                    sec -= 5;
+                    document.getElementById('timer').innerHTML=sec;
+                    setTimeout(function(){ 
+                        document.getElementById('fifthQuestion').style.display = 'none';
+                        document.getElementById('enterHighScore').style.display = 'block';
+                        document.getElementById('timerNav').style.display = "none";
+                        document.getElementById('answerHr').style.display = "none";
+                        document.getElementById('wrongText').style.display = "none";
+                    }, 1000);
+                }
+                document.getElementById('finalScore').innerHTML = scoreCount;
+            });
+        }
+
+        document.getElementById('submitInitials').addEventListener("click", function(){
+            var initials = document.getElementById('enterInitials').value;
+            if(/(.*[a-zA-Z]){3}/i.test('initials') == true){
+                scores.push((initials + '-' + scoreCount).toString());
+                var newArray = scores.concat(JSON.parse(localStorage.getItem('highScores')));
+                localStorage.setItem('highScores', JSON.stringify(newArray));
+                document.getElementById('homePage').style.display = "none";
+                document.getElementById('firstQuestion').style.display = "none";
+                document.getElementById('secondQuestion').style.display = "none";
+                document.getElementById('thirdQuestion').style.display = "none";
+                document.getElementById('fourthQuestion').style.display = "none";
+                document.getElementById('fifthQuestion').style.display = "none";
+                document.getElementById('mainNav').style.display = "none";
+                setTimeout(function(){ 
+                    var items = (localStorage.getItem("highScores"));
+                    var allScores = JSON.parse(items);
+            
+                    //making sure it still is an array
+                    console.log(allScores.length);
+                    var ol = document.createElement('ol');
+                    document.getElementById('highScoreList').appendChild(ol);
+                    allScores.forEach(function (item, index) {
+                        let li = document.createElement('li');
+                        ol.appendChild(li);
+
+                        li.innerHTML += item;
+                    });
+                    document.getElementById('enterHighScore').style.display = "none";
+                    document.getElementById('highScores').style.display = "block";
+                }, 1000);
+            }
+            else{
+                alert("Please enter two letters for your initials and try again.");
+            }
+        });
+
+        document.getElementById('viewScores').addEventListener("click", function(){
+            var newArray = scores.concat(JSON.parse(localStorage.getItem('highScores')));
+            console.log(newArray);
+            document.getElementById('homePage').style.display = "none";
+            document.getElementById('firstQuestion').style.display = "none";
+            document.getElementById('secondQuestion').style.display = "none";
+            document.getElementById('thirdQuestion').style.display = "none";
+            document.getElementById('fourthQuestion').style.display = "none";
+            document.getElementById('fifthQuestion').style.display = "none";
+            document.getElementById('mainNav').style.display = "none";
+            document.getElementById('enterHighScore').style.display = "none";
+            document.getElementById('highScores').style.display = "block";
+        });
+
+        document.getElementById('clearScores').addEventListener("click", function(){
+            var element = document.getElementById("highScoreList");
+            element.innerHTML = '';
+            localStorage.clear();
+        })
+        
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
